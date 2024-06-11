@@ -3,6 +3,7 @@ se\kth\iv1350\POS\controller\Controller.class
 se\kth\iv1350\POS\startup\Main.class
 se\kth\iv1350\POS\model\Price.class
 se\kth\iv1350\POS\model\Item.class
+se\kth\iv1350\POS\integration\ItemDTO.class
 se\kth\iv1350\POS\model\Sale.class
 se\kth\iv1350\POS\model\Receipt.class
 se\kth\iv1350\POS\integration\InventoryDatabase.class

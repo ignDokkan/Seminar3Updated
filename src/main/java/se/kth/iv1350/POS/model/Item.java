@@ -1,5 +1,7 @@
 package se.kth.iv1350.POS.model;
 
+import se.kth.iv1350.POS.integration.ItemDTO;
+
 /**
  * Represents an item that can be sold in the store.
  */
@@ -89,4 +91,13 @@ public class Item {
     public double getVATAmount() {
         return price.getVATAmount() * quantity;
     }
+
+    /**
+    * Converts this item to an ItemDTO object.
+    *
+    * @return A new ItemDTO object containing the same information as this item.
+    */
+   public ItemDTO toItemDTO() {
+       return new ItemDTO(itemID, itemName, price.getCost(), price.getVatRate(), itemDescription, quantity);
+   }
 }
