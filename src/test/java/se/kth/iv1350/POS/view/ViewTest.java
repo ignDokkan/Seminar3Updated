@@ -1,12 +1,15 @@
 package se.kth.iv1350.POS.view;
 
-import se.kth.iv1350.POS.controller.Controller;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import se.kth.iv1350.POS.controller.Controller;
+import se.kth.iv1350.POS.integration.ItemDTO;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Tests for the View class.
@@ -25,21 +28,27 @@ public class ViewTest {
             }
 
             @Override
-            public void endSale(double amount) {
-                // Mock behavior for endSale
-                System.out.println("End sale: " + amount);
-                System.out.println("Total cost (incl VAT):");
-                System.out.println("----------------------------End receipt----------------------------");
+            public ItemDTO addItemToSale(String itemID, int amount) {
+                // Mock behavior for addItemToSale
+                if ("001".equals(itemID)) {
+                    return new ItemDTO("001", "Item 1", 100.0, 0.25, "Description", amount);
+                } else {
+                    return null;
+                }
+            }
+
+
+            @Override
+            public void completeSale(double amountPaid) {
+                // Mock behavior for completeSale
             }
 
             @Override
-            public String addItemToSale(String itemID, int amount) {
-                // Mock behavior for addItemToSale
-                if ("001".equals(itemID)) {
-                    return "Add " + amount + " item(s) with item id " + itemID;
-                } else {
-                    return "";
-                }
+            public void endSale(double amountPaid) {
+                // Mock behavior for endSale
+                System.out.println("End sale: " + amountPaid);
+                System.out.println("Total cost (incl VAT):");
+                System.out.println("----------------------------End receipt----------------------------");
             }
         };
         instanceToTest = new View(contr);
@@ -61,7 +70,7 @@ public class ViewTest {
     public void testStartSale() {
         instanceToTest.startSale();
         String printout = printoutBuffer.toString();
-        assertTrue(printout.contains("A new sale has been started."), "The startSale method did not output correctly.");
+        assertTrue(printout.contains("Sale started."), "The startSale method did not output correctly.");
     }
 
     @Test
@@ -69,7 +78,7 @@ public class ViewTest {
         instanceToTest.startSale(); // Needed to initialize the sale in the controller
         instanceToTest.addItem("001", 1); // Assume "001" is a valid item ID
         String printout = printoutBuffer.toString();
-        assertTrue(printout.contains("Add 1 item(s) with item id 001"), "Item was not added as expected.");
+        assertTrue(printout.contains("Added 1 item(s) with item id 001"), "Item was not added as expected.");
     }
 
     @Test

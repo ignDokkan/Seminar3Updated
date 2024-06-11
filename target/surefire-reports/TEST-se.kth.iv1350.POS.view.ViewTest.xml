@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="se.kth.iv1350.POS.view.ViewTest" time="0.011" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="se.kth.iv1350.POS.view.ViewTest" time="0.014" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,7 +16,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-22\bin"/>
-    <property name="sun.java.command" value="C:\Users\simon\AppData\Local\Temp\surefire10906228637464904134\surefirebooter15913050335017182348.jar C:\Users\simon\AppData\Local\Temp\surefire10906228637464904134 2024-06-01T18-53-58_598-jvmRun1 surefire6380336092609549522tmp surefire_01610523097132025931tmp"/>
+    <property name="sun.java.command" value="C:\Users\simon\AppData\Local\Temp\surefire11201164426607845766\surefirebooter12672351123060368527.jar C:\Users\simon\AppData\Local\Temp\surefire11201164426607845766 2024-06-11T13-46-27_500-jvmRun1 surefire12030073798335352549tmp surefire_09724949212579418807tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="se.kth.iv1350.POS.view.ViewTest"/>
     <property name="surefire.test.class.path" value="C:\Users\simon\Downloads\Seminar3CodeThingys\POs-updated\target\test-classes;C:\Users\simon\Downloads\Seminar3CodeThingys\POs-updated\target\classes;C:\Users\simon\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.3.1\junit-jupiter-api-5.3.1.jar;C:\Users\simon\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\simon\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\simon\.m2\repository\org\junit\platform\junit-platform-commons\1.3.1\junit-platform-commons-1.3.1.jar;C:\Users\simon\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.3.1\junit-jupiter-params-5.3.1.jar;C:\Users\simon\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.3.1\junit-jupiter-engine-5.3.1.jar;C:\Users\simon\.m2\repository\org\junit\platform\junit-platform-engine\1.3.1\junit-platform-engine-1.3.1.jar;"/>
@@ -32,7 +32,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\simon\AppData\Local\Temp\surefire10906228637464904134\surefirebooter15913050335017182348.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\simon\AppData\Local\Temp\surefire11201164426607845766\surefirebooter12672351123060368527.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="22.0.1+8-16"/>
@@ -61,8 +61,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="testEndSale" classname="se.kth.iv1350.POS.view.ViewTest" time="0.005"/>
+  <testcase name="testEndSale" classname="se.kth.iv1350.POS.view.ViewTest" time="0.006"/>
   <testcase name="testStartSale" classname="se.kth.iv1350.POS.view.ViewTest" time="0"/>
-  <testcase name="testAddItemWithValidID" classname="se.kth.iv1350.POS.view.ViewTest" time="0.002"/>
+  <testcase name="testAddItemWithValidID" classname="se.kth.iv1350.POS.view.ViewTest" time="0.006"/>
   <testcase name="testAddItemWithInvalidID" classname="se.kth.iv1350.POS.view.ViewTest" time="0.001"/>
 </testsuite>

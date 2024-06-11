@@ -4,6 +4,7 @@ se\kth\iv1350\POS\view\ViewTest$1.class
 se\kth\iv1350\POS\model\PriceTest.class
 se\kth\iv1350\POS\model\ItemTest.class
 se\kth\iv1350\POS\model\SaleTest.class
+se\kth\iv1350\POS\integration\ItemDTOTest.class
 se\kth\iv1350\POS\startup\MainTest.class
 se\kth\iv1350\POS\view\ViewTest.class
 se\kth\iv1350\POS\integration\InventoryDatabaseTest.class

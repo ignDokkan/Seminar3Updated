@@ -1,9 +1,9 @@
 package se.kth.iv1350.POS.controller;
 
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-import se.kth.iv1350.POS.model.Item;
+import se.kth.iv1350.POS.integration.ItemDTO;
 
 public class ControllerTest {
     private Controller controller;
@@ -20,19 +20,26 @@ public class ControllerTest {
     }
 
     @Test
-    public void testGetItemByID() {
-        // Assuming there is an item with ID "abc123" in the inventory database
-        Item item = controller.getItemByID("abc123");
-        assertNotNull(item, "Item should not be null if it exists in the database.");
+    public void testGetItemDTOByID_ItemExists() {
+        String itemID = "abc123"; // Assuming there is an item with ID "abc123" in the inventory database
+        ItemDTO itemDTO = controller.getItemDTOByID(itemID);
+        assertNotNull(itemDTO, "ItemDTO should not be null if item exists in the database.");
     }
 
     @Test
-    public void testAddItemToSale() {
+    public void testGetItemDTOByID_ItemNotFound() {
+        String itemID = "nonexistent"; // Assume this ID does not exist in the database
+        ItemDTO itemDTO = controller.getItemDTOByID(itemID);
+        assertNull(itemDTO, "ItemDTO should be null if item is not found in the database.");
+    }
+
+    @Test
+    public void testAddItemToSale_ItemFound() {
         controller.startSale();
         String itemID = "abc123"; // Using an existing item ID from the database
         int amount = 1;
-        String result = controller.addItemToSale(itemID, amount);
-        assertFalse(result.isEmpty(), "Result should not be empty if item is added to sale.");
+        ItemDTO itemDTO = controller.addItemToSale(itemID, amount);
+        assertNotNull(itemDTO, "ItemDTO should not be null if item is added to sale.");
     }
 
     @Test
@@ -40,8 +47,8 @@ public class ControllerTest {
         controller.startSale();
         String itemID = "nonexistent"; // Assume this ID does not exist in the database
         int amount = 1;
-        String result = controller.addItemToSale(itemID, amount);
-        assertTrue(result.isEmpty(), "Result should be empty if item is not found in the database.");
+        ItemDTO itemDTO = controller.addItemToSale(itemID, amount);
+        assertNull(itemDTO, "ItemDTO should be null if item is not found in the database.");
     }
 
     @Test
